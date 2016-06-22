@@ -41,6 +41,12 @@ namespace VoidProject
             Save();
         }
 
+        private void openBut_Click(object sender, RoutedEventArgs e)
+        {
+            Load();
+        }
+
+
         void Save()
         {
             JsonSerializer js = new JsonSerializer();
@@ -64,13 +70,13 @@ namespace VoidProject
             tw.Dispose();
         }
 
-        private void openBut_Click(object sender, RoutedEventArgs e)
+        void Load()
         {
             JsonSerializer js = new JsonSerializer();
             TextReader tr = File.OpenText("data.json");
-            ModelInfo info = (ModelInfo)js.Deserialize(tr,typeof(ModelInfo));
+            ModelInfo info = (ModelInfo)js.Deserialize(tr, typeof(ModelInfo));
 
-            foreach(NodeInfo n in info.nodes.Values)
+            foreach (NodeInfo n in info.nodes.Values)
             {
                 Node node = manager.AddNode();
                 node.content.nodeText = n.text;
@@ -83,12 +89,13 @@ namespace VoidProject
             {
                 manager.LinkCreate(manager.nodes[link.Key], manager.nodes[link.Value]);
             }
-            
-            foreach(Node node in manager.nodes.Values)
+
+            foreach (Node node in manager.nodes.Values)
             {
                 node.control.Refresh();
             }
-
+            tr.Dispose();
         }
+
     }
 }
