@@ -1,0 +1,74 @@
+{
+  "links": [
+    {
+      "Key": 4,
+      "Value": 3
+    },
+    {
+      "Key": 2,
+      "Value": 3
+    },
+    {
+      "Key": 3,
+      "Value": 1
+    },
+    {
+      "Key": 3,
+      "Value": 0
+    },
+    {
+      "Key": 0,
+      "Value": 5
+    }
+  ],
+  "nodes": {
+    "0": {
+      "ID": 0,
+      "contentType": "NodeContent",
+      "posX": 676.0,
+      "posY": 92.0,
+      "text": "RIGHT",
+      "props": null
+    },
+    "1": {
+      "ID": 1,
+      "contentType": "NodeContent",
+      "posX": 762.0,
+      "posY": 534.0,
+      "text": "right down",
+      "props": null
+    },
+    "2": {
+      "ID": 2,
+      "contentType": "NodeContent",
+      "posX": 39.0,
+      "posY": 461.0,
+      "text": "DOWN",
+      "props": null
+    },
+    "3": {
+      "ID": 3,
+      "contentType": "NodeContent",
+      "posX": 371.0,
+      "posY": 308.0,
+      "text": "CENTER",
+      "props": null
+    },
+    "4": {
+      "ID": 4,
+      "contentType": "NodeContent",
+      "posX": 77.0,
+      "posY": 46.0,
+      "text": "FIRST",
+      "props": null
+    },
+    "5": {
+      "ID": 5,
+      "contentType": "NodeContent",
+      "posX": 1099.0,
+      "posY": 323.0,
+      "text": "empty",
+      "props": null
+    }
+  }
+}

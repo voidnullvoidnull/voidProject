@@ -12,7 +12,7 @@
             </ResourceDictionary.MergedDictionaries>
 
             <SolidColorBrush x:Key="tollbarColor" Color="#FFB8B8B8"/>
-            <SolidColorBrush x:Key="EarlGray" Color="#FF3E3E3E"/>
+            <SolidColorBrush x:Key="EarlGray" Color="#FF292929"/>
 
         </ResourceDictionary>
 

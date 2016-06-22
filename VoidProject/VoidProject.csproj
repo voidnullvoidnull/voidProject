@@ -34,6 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\void\Desktop\Converter\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -70,10 +73,12 @@
       <DependentUpon>NodeControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="DataClass\Base\NodeBase.cs" />
+    <Compile Include="DataClass\Base\NodeContent.cs" />
+    <Compile Include="DataClass\DataModel\ModelInfo.cs" />
+    <Compile Include="DataClass\DataModel\NodeInfo.cs" />
     <Compile Include="DataClass\Node.cs" />
     <Compile Include="DataClass\NodeLink.cs" />
     <Compile Include="DataClass\NodeManager.cs" />
-    <Compile Include="DataClass\NodeVisual.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
