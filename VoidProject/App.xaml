@@ -1,0 +1,20 @@
+﻿<Application x:Class="VoidProject.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:VoidProject"
+             xmlns:controls ="clr-namespace:VoidProject.Controls"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Simple Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="tollbarColor" Color="#FFB8B8B8"/>
+            <SolidColorBrush x:Key="EarlGray" Color="#FF3E3E3E"/>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

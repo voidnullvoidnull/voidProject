@@ -1,0 +1,19 @@
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\Simple Styles.baml
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\Controls\NodeControl.g.cs
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\MainWindow.g.cs
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\App.g.cs
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.cache
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.lref
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\bin\Debug\VoidProject.exe.config
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\bin\Debug\VoidProject.exe
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\bin\Debug\VoidProject.pdb
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\App.baml
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\Controls\NodeControl.baml
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\MainWindow.baml
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.g.resources
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.Properties.Resources.resources
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.csproj.GenerateResource.Cache
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.exe
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.pdb
+c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\рихтер\Documents\Visual Studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.csprojResolveAssemblyReference.cache
