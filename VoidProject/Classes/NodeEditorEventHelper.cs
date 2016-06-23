@@ -17,18 +17,15 @@ namespace VoidNull
     {
         public static NodeManager activeManager;
         public static double hardness = 50;
-        public static Path curve = new Path();
-
 
         public static void OnEditorMove(object sender, MouseEventArgs e)
         {
             if (activeManager.state == ManagerState.connecting)
             {
-                activeManager.canvas.Refresh();
-                curve.Data = BezierGeometry(activeManager.active.control.outPoint, Mouse.GetPosition(activeManager.canvas), hardness);
-                activeManager.canvas.Refresh();
+                activeManager.curve.Data = BezierGeometry(activeManager.active.control.outPoint, Mouse.GetPosition(activeManager.canvas), hardness);
+                activeManager.window.canvas.Refresh();
             }
-            else if (activeManager.state == ManagerState.scrolling)
+            if (activeManager.state == ManagerState.scrolling)
             {
                 activeManager.window.editorView.ScrollToHorizontalOffset(activeManager.scrollPosX + (activeManager.mouseDownPosX - e.GetPosition(activeManager.window).X));
                 activeManager.window.editorView.ScrollToVerticalOffset(activeManager.scrollPosY + (activeManager.mouseDownPosY - e.GetPosition(activeManager.window).Y));
@@ -39,27 +36,17 @@ namespace VoidNull
         public static void OnEditorDown(object sender, MouseButtonEventArgs e)
         {
 
-            if (Mouse.DirectlyOver.GetType() == typeof(TextBox))
-            {
-                if (activeManager.state == ManagerState.connecting)
-                {
-                    activeManager.state = ManagerState.normal;
-                    activeManager.active = null;
-                    activeManager.canvas.Children.Remove(curve);
-                }
-            }
-
             if (Mouse.DirectlyOver == activeManager.canvas)
             {
                 if (activeManager.state == ManagerState.connecting)
                 {
                     activeManager.state = ManagerState.normal;
                     activeManager.active = null;
-                    activeManager.canvas.Children.Remove(curve);
+                    activeManager.canvas.Children.Remove(activeManager.curve);
                     activeManager.canvas.Refresh();
                 }
 
-                else if (activeManager.state == ManagerState.normal)
+                if (activeManager.state == ManagerState.normal)
                 {
                     activeManager.state = ManagerState.scrolling;
                     activeManager.mouseDownPosX = e.GetPosition(activeManager.window).X;
@@ -82,7 +69,7 @@ namespace VoidNull
             {
                 activeManager.state = ManagerState.normal;
                 activeManager.active = null;
-                activeManager.canvas.Children.Remove(curve);
+                activeManager.canvas.Children.Remove(activeManager.curve);
                 activeManager.canvas.Refresh();
             }
         }
@@ -100,5 +87,15 @@ namespace VoidNull
         }
 
 
+    }
+
+    public static class ExtensionMethods
+    {
+        private static Action EmptyDelegate = delegate () { };
+
+        public static void Refresh(this UIElement uiElement)
+        {
+            uiElement.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
+        }
     }
 }

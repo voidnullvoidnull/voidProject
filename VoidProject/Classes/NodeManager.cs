@@ -123,15 +123,22 @@ namespace VoidNull
         }
 
 
-    }
-
-    public static class ExtensionMethods
-    {
-        private static Action EmptyDelegate = delegate () { };
-
-        public static void Refresh(this UIElement uiElement)
+        public void OnMove(object sender, MouseEventArgs e)
         {
-            uiElement.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
+            if (state == ManagerState.connecting)
+            {
+                curve.Data = NodeEventHelper.BezierGeometry(active.control.outPoint, Mouse.GetPosition(canvas), hardness);
+                window.canvas.Refresh();
+            }
+            if (state == ManagerState.scrolling)
+            {
+                window.editorView.ScrollToHorizontalOffset(scrollPosX + (mouseDownPosX - e.GetPosition(window).X));
+                window.editorView.ScrollToVerticalOffset(scrollPosY + (mouseDownPosY - e.GetPosition(window).Y));
+            }
+
         }
+
     }
+
+
 }

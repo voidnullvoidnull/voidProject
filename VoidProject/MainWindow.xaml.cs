@@ -27,44 +27,13 @@ namespace VoidNull
             manager.curve.Stroke = Brushes.AliceBlue;
             manager.curve.StrokeThickness = 2;
             manager.curve.IsHitTestVisible = false;
-            NodeEventHelper.activeManager = manager;
 
+            NodeEventHelper.activeManager = manager;
             canvas.MouseMove += NodeEventHelper.OnEditorMove;
             canvas.MouseDown += NodeEventHelper.OnEditorDown;
             canvas.MouseUp += NodeEventHelper.OnEditorUp;
-
-            CommandBinding newNodeBinding = new CommandBinding(ApplicationCommands.New);
-            CommandBinding saveBinding = new CommandBinding(ApplicationCommands.Save);
-            CommandBinding clearbinding = new CommandBinding(ApplicationCommands.Delete);
-
-            saveBinding.Executed += SaveBinding_Executed;
-            saveBinding.CanExecute += SaveBinding_CanExecute;
-            newNodeBinding.Executed += NewNodeBinding_Executed;
-            clearbinding.Executed += Clearbinding_Executed;
             
         }
-
-        private void SaveBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-          e.CanExecute = true;
-        }
-
-        private void Clearbinding_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            e.Handled = true;
-            Clear();
-        }
-
-        private void SaveBinding_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            Save();
-        }
-
-        private void NewNodeBinding_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            manager.AddNode();
-        }
-
 
         private void addBut_Click(object sender, RoutedEventArgs e)
         {
@@ -89,6 +58,12 @@ namespace VoidNull
             manager.curve.Stroke = Brushes.AliceBlue;
             manager.curve.StrokeThickness = 2;
             manager.curve.IsHitTestVisible = false;
+
+            NodeEventHelper.activeManager = manager;
+            canvas.MouseMove += NodeEventHelper.OnEditorMove;
+            canvas.MouseDown += NodeEventHelper.OnEditorDown;
+            canvas.MouseUp += NodeEventHelper.OnEditorUp;
+
 
             canvas.Children.Clear();
             canvas.Refresh();

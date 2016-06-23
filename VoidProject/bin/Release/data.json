@@ -1,0 +1,95 @@
+{
+  "count": 11,
+  "links": [
+    {
+      "Key": 3,
+      "Value": 2
+    },
+    {
+      "Key": 6,
+      "Value": 2
+    },
+    {
+      "Key": 2,
+      "Value": 7
+    },
+    {
+      "Key": 3,
+      "Value": 8
+    },
+    {
+      "Key": 2,
+      "Value": 8
+    },
+    {
+      "Key": 7,
+      "Value": 9
+    },
+    {
+      "Key": 8,
+      "Value": 9
+    },
+    {
+      "Key": 11,
+      "Value": 8
+    }
+  ],
+  "nodes": {
+    "2": {
+      "ID": 2,
+      "contentType": "NodeContent",
+      "posX": 613.0,
+      "posY": 319.0,
+      "text": "empty",
+      "props": null
+    },
+    "3": {
+      "ID": 3,
+      "contentType": "NodeContent",
+      "posX": 43.0,
+      "posY": 467.0,
+      "text": "empty",
+      "props": null
+    },
+    "6": {
+      "ID": 6,
+      "contentType": "NodeContent",
+      "posX": 200.0,
+      "posY": 137.0,
+      "text": "empty",
+      "props": null
+    },
+    "7": {
+      "ID": 7,
+      "contentType": "NodeContent",
+      "posX": 1107.0,
+      "posY": 174.0,
+      "text": "empty",
+      "props": null
+    },
+    "8": {
+      "ID": 8,
+      "contentType": "NodeContent",
+      "posX": 1165.0,
+      "posY": 567.0,
+      "text": "empty",
+      "props": null
+    },
+    "9": {
+      "ID": 9,
+      "contentType": "NodeContent",
+      "posX": 1625.0,
+      "posY": 461.0,
+      "text": "empty",
+      "props": null
+    },
+    "11": {
+      "ID": 11,
+      "contentType": "NodeContent",
+      "posX": 296.0,
+      "posY": 677.0,
+      "text": "empty",
+      "props": null
+    }
+  }
+}
