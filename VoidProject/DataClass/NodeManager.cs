@@ -31,18 +31,34 @@ namespace VoidProject
         public ManagerState state = ManagerState.normal;
         public Canvas canvas;
         public MainWindow window;
-        public List<NodeLink> links { get; private set; } = new List<NodeLink>();
-        public Dictionary<int,Node> nodes { get; private set; } = new Dictionary<int, Node>();
+        public List<NodeLink> links { get; set; } = new List<NodeLink>();
+        public Dictionary<int,Node> nodes { get; set; } = new Dictionary<int, Node>();
         public Path curve = new Path();
         public double hardness = 50;
 
         public Node AddNode()
         {
+            count++;
             Node node = new Node(canvas, this, count);
             nodes.Add(node.ID, node);
             node.position = canvas.PointFromScreen(new Point(200, 200));
             selected = node;
-            count++;
+            return node;
+        }
+
+        public Node LoadNode(NodeInfo info)
+        {
+            Node node = new Node(canvas, this, info.ID);
+            if (nodes.ContainsKey(info.ID))
+            {
+                nodes[info.ID] = node; 
+            }
+            else
+            {
+                nodes.Add(info.ID, node);
+            }
+            node.position = new Point(info.posX, info.posY);
+            node.content.SetInfo(info);
             return node;
         }
 
@@ -73,6 +89,10 @@ namespace VoidProject
 
             canvas.Children.Remove(node.control);
             nodes.Remove(node.ID);
+            if (nodes.ContainsKey(node.ID))
+            {
+                window.canvas.Background = Brushes.AliceBlue;
+            }
         }
 
         public void LinkCreate(Node s, Node e)

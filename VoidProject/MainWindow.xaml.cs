@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
@@ -16,6 +17,7 @@ namespace VoidProject
     public partial class MainWindow : Window
     {
         public NodeManager manager = new NodeManager();
+        public ModelInfo info = new ModelInfo();
 
         public MainWindow()
         {
@@ -29,7 +31,39 @@ namespace VoidProject
             canvas.MouseMove += manager.OnMouseMove;
             canvas.MouseDown += manager.OnMouseDown;
             canvas.MouseUp += manager.OnMouseUp;
+
+            CommandBinding newNodeBinding = new CommandBinding(ApplicationCommands.New);
+            CommandBinding saveBinding = new CommandBinding(ApplicationCommands.Save);
+            CommandBinding clearbinding = new CommandBinding(ApplicationCommands.Delete);
+
+            saveBinding.Executed += SaveBinding_Executed;
+            saveBinding.CanExecute += SaveBinding_CanExecute;
+            newNodeBinding.Executed += NewNodeBinding_Executed;
+            clearbinding.Executed += Clearbinding_Executed;
+            
         }
+
+        private void SaveBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+                e.CanExecute = true;
+        }
+
+        private void Clearbinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            e.Handled = true;
+            Clear();
+        }
+
+        private void SaveBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            Save();
+        }
+
+        private void NewNodeBinding_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            manager.AddNode();
+        }
+
 
         private void addBut_Click(object sender, RoutedEventArgs e)
         {
@@ -46,55 +80,72 @@ namespace VoidProject
             Load();
         }
 
+        void Clear()
+        {
+            manager = new NodeManager();
+            manager.canvas = canvas;
+            manager.window = this;
+            manager.curve.Stroke = Brushes.AliceBlue;
+            manager.curve.StrokeThickness = 2;
+            manager.curve.IsHitTestVisible = false;
+
+            canvas.MouseMove += manager.OnMouseMove;
+            canvas.MouseDown += manager.OnMouseDown;
+            canvas.MouseUp += manager.OnMouseUp;
+
+            canvas.Children.Clear();
+            canvas.Refresh();
+        }
 
         void Save()
         {
-            JsonSerializer js = new JsonSerializer();
-            TextWriter tw =  File.CreateText("data.json");
-
-            ModelInfo info = new ModelInfo();
+            info = new ModelInfo();
+            info.count = manager.count;
             info.links = new List<KeyValuePair<int, int>>();
             info.nodes = new Dictionary<int, NodeInfo>();
 
-            foreach(NodeLink link in manager.links)
+            foreach (NodeLink link in manager.links)
             {
                 info.Addlink(link.GetLink());
             }
-            foreach(Node node in manager.nodes.Values)
+            foreach (Node node in manager.nodes.Values)
             {
                 info.AddNodeInfo(node.content.Getinfo());
             }
 
-            js.Formatting = Formatting.Indented;
-            js.Serialize(tw, info, typeof(ModelInfo));
-            tw.Dispose();
+            using (TextWriter tw = File.CreateText("data.json"))
+            {
+                JsonSerializer js = new JsonSerializer();
+                js.Formatting = Formatting.Indented;
+                js.Serialize(tw, info, typeof(ModelInfo));
+            }
         }
 
         void Load()
         {
-            JsonSerializer js = new JsonSerializer();
-            TextReader tr = File.OpenText("data.json");
-            ModelInfo info = (ModelInfo)js.Deserialize(tr, typeof(ModelInfo));
+
+            Clear();
+
+            using (TextReader tr = File.OpenText("data.json"))
+            {
+                JsonSerializer js = new JsonSerializer();
+                info = (ModelInfo)js.Deserialize(tr, typeof(ModelInfo));
+                manager.count = info.count+1;
+            }
 
             foreach (NodeInfo n in info.nodes.Values)
             {
-                Node node = manager.AddNode();
-                node.content.nodeText = n.text;
-                node.content.SetInfo(n);
-                node.position = new Point(n.posX, n.posY);
-                node.ID = n.ID;
+                manager.LoadNode(n);
             }
 
             foreach (KeyValuePair<int, int> link in info.links)
             {
-                manager.LinkCreate(manager.nodes[link.Key], manager.nodes[link.Value]);
+               manager.LinkCreate(manager.nodes[link.Key], manager.nodes[link.Value]);
             }
-
-            foreach (Node node in manager.nodes.Values)
+            foreach(Node node in manager.nodes.Values)
             {
                 node.control.Refresh();
             }
-            tr.Dispose();
         }
 
     }

@@ -9,6 +9,7 @@ namespace VoidProject
     [Serializable]
     public struct ModelInfo
     {
+        public int count;
         public List<KeyValuePair<int, int>> links;
         public Dictionary<int, NodeInfo> nodes;
 

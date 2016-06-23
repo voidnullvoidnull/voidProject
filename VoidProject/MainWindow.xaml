@@ -15,19 +15,27 @@
             <RowDefinition Height="207*" MinHeight="50"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="390*" MinWidth="150"/>
-            <ColumnDefinition Width="5*" MaxWidth="5"/>
-            <ColumnDefinition Width="120*" MinWidth="80"/>
+            <ColumnDefinition Width="213*" MinWidth="180"/>
+            <ColumnDefinition Width="0*" MaxWidth="5"/>
+            <ColumnDefinition Width="26*" MinWidth="20"/>
         </Grid.ColumnDefinitions>
-        <GridSplitter x:Name="inspectorSplitter" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource tollbarColor}" Foreground="{x:Null}"/>
+        <GridSplitter x:Name="inspectorSplitter" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource tollbarColor}" Foreground="{x:Null}" Grid.ColumnSpan="2" Width="0"/>
         <GridSplitter x:Name="itemsSplitter" HorizontalAlignment="Stretch" Grid.Row="2" ResizeDirection="Rows" Grid.ColumnSpan="3" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Background="{DynamicResource tollbarColor}" Foreground="{x:Null}"/>
         <StackPanel x:Name="topMenu" Grid.ColumnSpan="3" Background="{DynamicResource tollbarColor}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" Orientation="Horizontal">
             <CalendarButton x:Name="saveBut" Content="save" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" MinWidth="100" MinHeight="10" Width="80" FontSize="17.333" d:LayoutOverrides="TopMargin, BottomMargin" Click="saveBut_Click"/>
             <CalendarButton x:Name="openBut" Content="open" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" MinWidth="100" MinHeight="10" Width="80" FontSize="17.333" d:LayoutOverrides="TopMargin, BottomMargin" Click="openBut_Click"/>
-            <CalendarButton x:Name="addBut" Content="add node" d:LayoutOverrides="TopMargin, BottomMargin" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" MinWidth="100" MinHeight="10" Width="80" FontSize="17.333" Click="addBut_Click"/>
         </StackPanel>
         <ScrollViewer x:Name="editorView" Grid.Row="1" HorizontalScrollBarVisibility="Visible" CanContentScroll="True" Grid.IsSharedSizeScope="True" PanningMode="Both" PanningDeceleration="0.1" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-            <Canvas x:Name="canvas" Height="4995" Width="5000" Focusable="True" Grid.IsSharedSizeScope="True" ScrollViewer.CanContentScroll="True" Background="{DynamicResource EarlGray}"/>
+            <Canvas x:Name="canvas" Height="4995" Width="5000" Focusable="True" Background="{DynamicResource EarlGray}">
+                <Canvas.ContextMenu>
+                    <ContextMenu x:Name="canvasContextMenu">
+                        <MenuItem Header = "add node" Command="ApplicationCommands.New"/>
+                        <Separator></Separator>
+                        <MenuItem Header = "open" Command="ApplicationCommands.Open" />
+                        <MenuItem Header = "clear" Command="ApplicationCommands.Delete" />
+                    </ContextMenu>
+                </Canvas.ContextMenu>
+            </Canvas>
         </ScrollViewer>
         <ScrollViewer x:Name="InspectorView" Grid.Column="2" Grid.Row="1" PanningRatio="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" IsManipulationEnabled="True" PanningMode="VerticalFirst" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
             <StackPanel x:Name="inspectorStack" Height="2000" Background="{DynamicResource EarlGray}" Focusable="True" CanVerticallyScroll="True" CanHorizontallyScroll="True" UseLayoutRounding="False">
@@ -35,8 +43,9 @@
             </StackPanel>
         </ScrollViewer>
         <ScrollViewer x:Name="itemsView" Grid.Row="3" PanningMode="Both" IsManipulationEnabled="True" PanningDeceleration="0.0005" PanningRatio="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.ColumnSpan="3" Margin="0,0,10,0" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
-            <StackPanel x:Name="itemsStack" Background="{DynamicResource EarlGray}" Width="4504" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" HorizontalAlignment="Left" Orientation="Horizontal"/>
+            <StackPanel x:Name="itemsStack" Background="{DynamicResource EarlGray}" Width="4504" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" HorizontalAlignment="Left" Orientation="Horizontal">
+                <CalendarButton x:Name="addBut" Content="add node" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" MinWidth="100" MinHeight="10" FontSize="17.333" Click="addBut_Click" Width="103" Foreground="White" Background="#FF86E0FF"/>
+            </StackPanel>
         </ScrollViewer>
-
     </Grid>
 </Window>

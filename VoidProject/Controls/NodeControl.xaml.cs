@@ -116,6 +116,7 @@ namespace VoidProject.Controls
 
         void control_Loaded(object sender, RoutedEventArgs e)
         {
+            idLabel.Content = node.ID;
             position = node.position;
             content.Content = node.content;
         }

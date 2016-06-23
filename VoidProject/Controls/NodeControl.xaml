@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:VoidProject"
              xmlns:local1="clr-namespace:VoidProject.Controls" x:Name="control" x:Class="VoidProject.Controls.NodeControl"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300" Width="300" Height="200" Background="{DynamicResource transperentblue}" Foreground="{x:Null}" BorderThickness="1" UseLayoutRounding="True" MouseLeftButtonDown="Select" MouseLeftButtonUp="Leave" MouseMove="Move" Loaded="control_Loaded">
+             d:DesignHeight="300" d:DesignWidth="300" Width="300" Height="200" Background="{DynamicResource TransperentControl}" Foreground="{x:Null}" BorderThickness="1" UseLayoutRounding="True" MouseLeftButtonDown="Select" MouseLeftButtonUp="Leave" MouseMove="Move" Loaded="control_Loaded">
     <UserControl.Resources>
         <SolidColorBrush x:Key="TransperentGray" Color="#66266670"/>
         <SolidColorBrush x:Key="transperentblue" Color="#7F2A3B3E"/>
@@ -14,7 +14,8 @@
     </UserControl.Resources>
     <Canvas>
         <Rectangle x:Name="header" Fill="#FF8F8F8F" d:LayoutOverrides="LeftMargin, RightMargin" Height="37" Width="298" VerticalAlignment="Top"/>
-        <Label x:Name="headerName" Content="void node" Width="141" VerticalContentAlignment="Bottom" Padding="10,0,0,0" Foreground="#FFCBCBCB" FontSize="24" d:LayoutOverrides="LeftMargin, RightMargin" Height="37"/>
+        <Label x:Name="idLabel" Content="ID" Width="78" VerticalContentAlignment="Bottom" Padding="10,0,0,0" Foreground="#FFCBCBCB" Height="26" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Top" d:LayoutOverrides="LeftMargin, RightMargin"/>
+        <Label x:Name="headerName" Content="void node" Width="78" VerticalContentAlignment="Bottom" Padding="10,0,0,0" Foreground="#FFCBCBCB" d:LayoutOverrides="LeftMargin, RightMargin" Height="11" FontSize="8" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Top="26"/>
         <Ellipse x:Name="delete" Fill="#FFA80C0C" Width="15" Height="15" MouseLeftButtonDown="delete_MouseLeftButtonDown" Canvas.Left="278" Canvas.Top="12"/>
         <Ellipse x:Name="output" Fill="{DynamicResource transperentblue}" Width="20" Height="20" Stroke="White" MouseDown="output_MouseDown" Canvas.Left="303" Canvas.Top="108" d:LayoutOverrides="Height, TopMargin, BottomMargin"/>
         <Ellipse x:Name="input" Fill="{DynamicResource transperentblue}" Width="20" Height="20" Stroke="White" MouseDown="input_MouseDown" Canvas.Left="-25" Canvas.Top="108" d:LayoutOverrides="Height, TopMargin, BottomMargin"/>

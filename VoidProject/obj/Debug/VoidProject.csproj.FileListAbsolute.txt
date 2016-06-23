@@ -20,6 +20,7 @@ C:\Users\рихтер\Documents\Visual Studio 2015\Projects\VoidProject\VoidProj
 D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.exe.config
 D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.exe
 D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.pdb
+D:\void\VoidProject\VoidProject\bin\Debug\Newtonsoft.Json.dll
 D:\void\VoidProject\VoidProject\obj\Debug\Simple Styles.baml
 D:\void\VoidProject\VoidProject\obj\Debug\Controls\NodeControl.g.cs
 D:\void\VoidProject\VoidProject\obj\Debug\MainWindow.g.cs
@@ -35,4 +36,3 @@ D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.csproj.GenerateResource.Ca
 D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.exe
 D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.pdb
 D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.csprojResolveAssemblyReference.cache
-D:\void\VoidProject\VoidProject\bin\Debug\Newtonsoft.Json.dll

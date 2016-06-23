@@ -13,5 +13,9 @@ namespace VoidProject
     /// </summary>
     public partial class App : Application
     {
+        private void Label_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            ((MainWindow)Application.Current.Windows[0]).manager.AddNode();
+        }
     }
 }

@@ -72,10 +72,10 @@
     <Compile Include="Controls\NodeControl.xaml.cs">
       <DependentUpon>NodeControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataClass\Base\NodeBase.cs" />
-    <Compile Include="DataClass\Base\NodeContent.cs" />
-    <Compile Include="DataClass\DataModel\ModelInfo.cs" />
-    <Compile Include="DataClass\DataModel\NodeInfo.cs" />
+    <Compile Include="DataClass\NodeBase.cs" />
+    <Compile Include="DataClass\NodeContent.cs" />
+    <Compile Include="DataClass\ModelInfo.cs" />
+    <Compile Include="DataClass\NodeInfo.cs" />
     <Compile Include="DataClass\Node.cs" />
     <Compile Include="DataClass\NodeLink.cs" />
     <Compile Include="DataClass\NodeManager.cs" />
@@ -115,6 +115,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
