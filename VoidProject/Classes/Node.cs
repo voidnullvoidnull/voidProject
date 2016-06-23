@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows;
 using System.Windows.Media;
-using VoidProject.Controls;
+using VoidNull.Controls;
 
-namespace VoidProject
+namespace VoidNull
 {
     public class Node : NodeBase
     {

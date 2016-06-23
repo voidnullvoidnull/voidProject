@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace VoidProject.Properties
+namespace VoidNull.Properties
 {
 
 

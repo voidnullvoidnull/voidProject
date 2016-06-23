@@ -10,9 +10,9 @@ using System.Windows.Shapes;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using VoidProject.Controls;
+using VoidNull.Controls;
 
-namespace VoidProject
+namespace VoidNull
 {
 
     public enum ManagerState
@@ -36,6 +36,11 @@ namespace VoidProject
         public Path curve = new Path();
         public double hardness = 50;
 
+        public double mouseDownPosX = 0;
+        public double mouseDownPosY = 0;
+        public double scrollPosX = 0;
+        public double scrollPosY = 0;
+
         public Node AddNode()
         {
             count++;
@@ -50,13 +55,9 @@ namespace VoidProject
         {
             Node node = new Node(canvas, this, info.ID);
             if (nodes.ContainsKey(info.ID))
-            {
-                nodes[info.ID] = node; 
-            }
+                        { nodes[info.ID] = node;}
             else
-            {
-                nodes.Add(info.ID, node);
-            }
+                        { nodes.Add(info.ID, node);}
             node.position = new Point(info.posX, info.posY);
             node.content.SetInfo(info);
             return node;
@@ -77,9 +78,7 @@ namespace VoidProject
             foreach(NodeLink link in links)
             {
                 if (link.connected.Contains(node))
-                {
-                    toDelete.Add(link);
-                }
+                        toDelete.Add(link);
             }
 
             foreach(NodeLink del in toDelete)
@@ -89,10 +88,6 @@ namespace VoidProject
 
             canvas.Children.Remove(node.control);
             nodes.Remove(node.ID);
-            if (nodes.ContainsKey(node.ID))
-            {
-                window.canvas.Background = Brushes.AliceBlue;
-            }
         }
 
         public void LinkCreate(Node s, Node e)
@@ -107,7 +102,7 @@ namespace VoidProject
             {
                 state = ManagerState.connecting;
                 active = start;
-                curve.Data = BezierGeometry(active.control.outPoint, Mouse.GetPosition(canvas) , hardness);
+                curve.Data = NodeEventHelper.BezierGeometry(active.control.outPoint, Mouse.GetPosition(canvas) , hardness);
 
                 canvas.Refresh();
                 canvas.Children.Add(curve);
@@ -127,58 +122,6 @@ namespace VoidProject
             end.control.Refresh();
         }
 
-        public void OnMouseMove(object sender, MouseEventArgs e)
-        {
-            if (state == ManagerState.connecting)
-            {
-                canvas.Refresh();
-                curve.Data = BezierGeometry(active.control.outPoint, Mouse.GetPosition(canvas), hardness);
-                canvas.Refresh();
-            }
-        }
-        
-        public void OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            if(state == ManagerState.connecting && Mouse.DirectlyOver == canvas)
-            {
-                state = ManagerState.normal;
-                active = null;
-                canvas.Children.Remove(curve);
-                canvas.Refresh();
-            }
-
-            if(state == ManagerState.normal & canvas.IsMouseOver)
-            {
-                state = ManagerState.scrolling;
-            }
-        }
-
-        public void OnMouseUp(object sender, MouseButtonEventArgs e)
-        {
-            if(state == ManagerState.scrolling)
-            {
-                state = ManagerState.normal;
-            }
-            else if(state == ManagerState.dragging)
-            {
-                state = ManagerState.normal;
-                active = null;
-                canvas.Children.Remove(curve);
-                canvas.Refresh();
-            }
-        }
-
-        public static Geometry BezierGeometry(Point start, Point end, double hardness)
-        {
-            Point p1 = new Point(start.X + hardness, start.Y);
-            Point p2 = new Point(end.X - hardness, end.Y);
-
-            BezierSegment segment = new BezierSegment(p1, p2, end, true);
-            PathFigure figure = new PathFigure(start, new[] { segment }, false);
-            PathGeometry geom = new PathGeometry(new[] { figure });
-
-            return geom;
-        }
 
     }
 

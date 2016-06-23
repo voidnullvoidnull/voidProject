@@ -69,16 +69,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\NodeEditorEventHelper.cs" />
     <Compile Include="Controls\NodeControl.xaml.cs">
       <DependentUpon>NodeControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DataClass\NodeBase.cs" />
-    <Compile Include="DataClass\NodeContent.cs" />
-    <Compile Include="DataClass\ModelInfo.cs" />
-    <Compile Include="DataClass\NodeInfo.cs" />
-    <Compile Include="DataClass\Node.cs" />
-    <Compile Include="DataClass\NodeLink.cs" />
-    <Compile Include="DataClass\NodeManager.cs" />
+    <Compile Include="Classes\NodeBase.cs" />
+    <Compile Include="Classes\NodeContent.cs" />
+    <Compile Include="Classes\NodeModelInfo.cs" />
+    <Compile Include="Classes\NodeInfo.cs" />
+    <Compile Include="Classes\Node.cs" />
+    <Compile Include="Classes\NodeLink.cs" />
+    <Compile Include="Classes\NodeManager.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

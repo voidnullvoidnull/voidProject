@@ -36,3 +36,21 @@ D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.csproj.GenerateResource.Ca
 D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.exe
 D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.pdb
 D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.csprojResolveAssemblyReference.cache
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.csprojResolveAssemblyReference.cache
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\Simple Styles.baml
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\Controls\NodeControl.g.cs
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\MainWindow.g.cs
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\App.g.cs
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.cache
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.lref
+C:\Users\void\Source\Repos\voidProject\VoidProject\bin\Debug\VoidProject.exe.config
+C:\Users\void\Source\Repos\voidProject\VoidProject\bin\Debug\VoidProject.exe
+C:\Users\void\Source\Repos\voidProject\VoidProject\bin\Debug\VoidProject.pdb
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\App.baml
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\Controls\NodeControl.baml
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\MainWindow.baml
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.g.resources
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.Properties.Resources.resources
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.csproj.GenerateResource.Cache
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.exe
+C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.pdb

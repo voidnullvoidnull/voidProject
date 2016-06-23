@@ -12,12 +12,12 @@ using System.Windows.Media;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace VoidProject
+namespace VoidNull
 {
     public partial class MainWindow : Window
     {
         public NodeManager manager = new NodeManager();
-        public ModelInfo info = new ModelInfo();
+        public NodeModelInfo info = new NodeModelInfo();
 
         public MainWindow()
         {
@@ -27,10 +27,11 @@ namespace VoidProject
             manager.curve.Stroke = Brushes.AliceBlue;
             manager.curve.StrokeThickness = 2;
             manager.curve.IsHitTestVisible = false;
+            NodeEventHelper.activeManager = manager;
 
-            canvas.MouseMove += manager.OnMouseMove;
-            canvas.MouseDown += manager.OnMouseDown;
-            canvas.MouseUp += manager.OnMouseUp;
+            canvas.MouseMove += NodeEventHelper.OnEditorMove;
+            canvas.MouseDown += NodeEventHelper.OnEditorDown;
+            canvas.MouseUp += NodeEventHelper.OnEditorUp;
 
             CommandBinding newNodeBinding = new CommandBinding(ApplicationCommands.New);
             CommandBinding saveBinding = new CommandBinding(ApplicationCommands.Save);
@@ -45,7 +46,7 @@ namespace VoidProject
 
         private void SaveBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
-                e.CanExecute = true;
+          e.CanExecute = true;
         }
 
         private void Clearbinding_Executed(object sender, ExecutedRoutedEventArgs e)
@@ -89,17 +90,13 @@ namespace VoidProject
             manager.curve.StrokeThickness = 2;
             manager.curve.IsHitTestVisible = false;
 
-            canvas.MouseMove += manager.OnMouseMove;
-            canvas.MouseDown += manager.OnMouseDown;
-            canvas.MouseUp += manager.OnMouseUp;
-
             canvas.Children.Clear();
             canvas.Refresh();
         }
 
         void Save()
         {
-            info = new ModelInfo();
+            info = new NodeModelInfo();
             info.count = manager.count;
             info.links = new List<KeyValuePair<int, int>>();
             info.nodes = new Dictionary<int, NodeInfo>();
@@ -117,7 +114,7 @@ namespace VoidProject
             {
                 JsonSerializer js = new JsonSerializer();
                 js.Formatting = Formatting.Indented;
-                js.Serialize(tw, info, typeof(ModelInfo));
+                js.Serialize(tw, info, typeof(NodeModelInfo));
             }
         }
 
@@ -129,7 +126,7 @@ namespace VoidProject
             using (TextReader tr = File.OpenText("data.json"))
             {
                 JsonSerializer js = new JsonSerializer();
-                info = (ModelInfo)js.Deserialize(tr, typeof(ModelInfo));
+                info = (NodeModelInfo)js.Deserialize(tr, typeof(NodeModelInfo));
                 manager.count = info.count+1;
             }
 

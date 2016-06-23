@@ -9,9 +9,9 @@ using System.Windows.Shapes;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Threading;
-using VoidProject.Controls;
+using VoidNull.Controls;
 
-namespace VoidProject
+namespace VoidNull
 {
     public class NodeLink: NodeBase
     {

@@ -1,8 +1,8 @@
-﻿<Application x:Class="VoidProject.App"
+﻿<Application x:Class="VoidNull.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:VoidProject"
-             xmlns:controls ="clr-namespace:VoidProject.Controls"
+             xmlns:local="clr-namespace:VoidNull"
+             xmlns:controls ="clr-namespace:VoidNull.Controls"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
 

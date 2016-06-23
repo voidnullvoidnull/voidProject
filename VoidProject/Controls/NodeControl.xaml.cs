@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using VoidProject;
+using VoidNull;
 
-namespace VoidProject.Controls
+namespace VoidNull.Controls
 {
     public partial class NodeControl : UserControl
     {
@@ -63,7 +63,7 @@ namespace VoidProject.Controls
             {
                 if (link.connected.Contains(node))
                 {
-                    link.controlCurve.Data = NodeManager.BezierGeometry(link.connected[0].control.outPoint, link.connected[1].control.inPoint, 50);
+                    link.controlCurve.Data = NodeEventHelper.BezierGeometry(link.connected[0].control.outPoint, link.connected[1].control.inPoint, 50);
                     Canvas.SetLeft(link.deleteControl, ((link.connected[0].control.outPoint.X + link.connected[1].control.inPoint.X) / 2) - 10);
                     Canvas.SetTop(link.deleteControl, ((link.connected[0].control.outPoint.Y + link.connected[1].control.inPoint.Y) / 2) - 10);
                 }
