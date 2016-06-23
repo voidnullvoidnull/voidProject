@@ -22,9 +22,18 @@ namespace VoidProject
             parentNode = parent;
             parentManager = manager;
             panel = new StackPanel();
-            TextBox box = new TextBox { Height = 50, Text = nodeText };
+
+            TextBox box = new TextBox
+            {
+                Height = 80,
+                Text = nodeText,
+                Background = (Brush)FindResource("TransperentControl"),
+                Foreground = Brushes.AliceBlue
+            };
+
             box.TextChanged += Box_TextChanged;
             panel.Children.Add(box);
+
             Content = panel;
         }
 

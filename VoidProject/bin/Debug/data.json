@@ -1,113 +1,54 @@
 {
+  "count": 4,
   "links": [
     {
-      "Key": 4,
+      "Key": 1,
+      "Value": 2
+    },
+    {
+      "Key": 1,
       "Value": 3
     },
     {
       "Key": 2,
-      "Value": 3
+      "Value": 4
     },
     {
       "Key": 3,
-      "Value": 1
-    },
-    {
-      "Key": 3,
-      "Value": 0
-    },
-    {
-      "Key": 0,
-      "Value": 5
-    },
-    {
-      "Key": 5,
-      "Value": 6
-    },
-    {
-      "Key": 5,
-      "Value": 7
-    },
-    {
-      "Key": 6,
-      "Value": 8
-    },
-    {
-      "Key": 7,
-      "Value": 8
+      "Value": 4
     }
   ],
   "nodes": {
-    "0": {
-      "ID": 0,
-      "contentType": "NodeContent",
-      "posX": 747.0,
-      "posY": 177.0,
-      "text": "RIGHT",
-      "props": null
-    },
     "1": {
       "ID": 1,
       "contentType": "NodeContent",
-      "posX": 773.0,
-      "posY": 510.0,
-      "text": "right down",
+      "posX": 84.0,
+      "posY": 219.0,
+      "text": "empty",
       "props": null
     },
     "2": {
       "ID": 2,
       "contentType": "NodeContent",
-      "posX": -11.0,
-      "posY": 318.0,
-      "text": "DOWN",
+      "posX": 595.0,
+      "posY": 200.0,
+      "text": "empty",
       "props": null
     },
     "3": {
       "ID": 3,
       "contentType": "NodeContent",
-      "posX": 390.0,
-      "posY": 329.0,
-      "text": "CENTER",
+      "posX": 503.0,
+      "posY": 497.0,
+      "text": "empty",
       "props": null
     },
     "4": {
       "ID": 4,
       "contentType": "NodeContent",
-      "posX": -10.0,
-      "posY": 90.0,
-      "text": "FIRST",
-      "props": null
-    },
-    "5": {
-      "ID": 5,
-      "contentType": "NodeContent",
-      "posX": 1118.0,
-      "posY": 322.0,
+      "posX": 1019.0,
+      "posY": 407.0,
       "text": "empty",
-      "props": null
-    },
-    "6": {
-      "ID": 6,
-      "contentType": "NodeContent",
-      "posX": 1365.0,
-      "posY": 568.0,
-      "text": "empty",
-      "props": null
-    },
-    "7": {
-      "ID": 7,
-      "contentType": "NodeContent",
-      "posX": 1586.0,
-      "posY": 245.0,
-      "text": "empty",
-      "props": null
-    },
-    "8": {
-      "ID": 8,
-      "contentType": "NodeContent",
-      "posX": 1826.0,
-      "posY": 520.0,
-      "text": "END",
       "props": null
     }
   }
