@@ -42,7 +42,8 @@
         </ScrollViewer>
         <ScrollViewer x:Name="itemsView" Grid.Row="3" PanningMode="Both" IsManipulationEnabled="True" PanningDeceleration="0.0005" PanningRatio="2" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Grid.ColumnSpan="3" Margin="0,0,10,0" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible">
             <StackPanel x:Name="itemsStack" Background="{DynamicResource EarlGray}" Width="4504" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" HorizontalAlignment="Left" Orientation="Horizontal">
-                <CalendarButton x:Name="addBut" Content="add node" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" MinWidth="100" MinHeight="10" FontSize="17.333" Click="addBut_Click" Width="103" Foreground="White" Background="#FF86E0FF"/>
+                <CalendarButton x:Name="addBut" Content="color node" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" MinWidth="100" MinHeight="10" FontSize="17.333" Click="addBut_Click" Width="103" Foreground="White" Background="#FF86E0FF"/>
+                <CalendarButton x:Name="addTextBut" Content="text node" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" MinWidth="100" MinHeight="10" FontSize="17.333" Click="addTextBut_Click" Width="103" Foreground="White" Background="#FF86E0FF"/>
             </StackPanel>
         </ScrollViewer>
         <Label x:Name="scrollLabel" Content="scroll" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" Grid.Row="1" Foreground="White" Height="26" Width="38"/>

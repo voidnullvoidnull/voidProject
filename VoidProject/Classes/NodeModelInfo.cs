@@ -18,7 +18,7 @@ namespace VoidNull
             links.Add(pair);
         }
 
-        public void AddNodeInfo(NodeInfo info)
+        public void WriteNodeInfo(NodeInfo info)
         {
             nodes.Add(info.ID,info);
         }

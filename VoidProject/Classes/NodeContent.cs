@@ -10,55 +10,30 @@ using VoidNull.Controls;
 
 namespace VoidNull
 {
-    public class NodeContent : UserControl 
+    public abstract class NodeContent : UserControl 
     {
+        public string contentType;
+        public Node node;
+        public NodeManager manager;
         public StackPanel panel;
-        public Node parentNode;
-        public NodeManager parentManager;
-        public string nodeText = "empty";
 
-        public NodeContent(Node parent, NodeManager manager)
+
+        public NodeContent()
         {
-            parentNode = parent;
-            parentManager = manager;
             panel = new StackPanel();
-
-            TextBox box = new TextBox
-            {
-                Height = 80,
-                Text = nodeText,
-                Background = (Brush)FindResource("TransperentControl"),
-                Foreground = Brushes.AliceBlue
-            };
-
-            box.TextChanged += Box_TextChanged;
-            panel.Children.Add(box);
-
             Content = panel;
-        }
-
-        private void Box_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            nodeText = ((TextBox)sender).Text;
         }
 
         public virtual NodeInfo Getinfo()
         {
             return new NodeInfo
             {
-                ID = parentNode.ID,
-                contentType = "NodeContent",
-                posX = parentNode.position.X, posY = parentNode.position.Y,
-                text = nodeText
+                ID = node.ID,
+                contentType = contentType,
+                posX = node.position.X,
+                posY = node.position.Y,
             };
         }
-
-        public virtual void SetInfo(NodeInfo info)
-        {
-            nodeText = info.text;
-            ((TextBox)panel.Children[0]).Text = info.text;
-        }
-
 
     }
 }

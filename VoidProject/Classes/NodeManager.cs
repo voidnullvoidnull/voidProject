@@ -54,12 +54,29 @@ namespace VoidNull
         public Node LoadNode(NodeInfo info)
         {
             Node node = new Node(canvas, this, info.ID);
+
             if (nodes.ContainsKey(info.ID))
                         { nodes[info.ID] = node;}
             else
                         { nodes.Add(info.ID, node);}
             node.position = new Point(info.posX, info.posY);
-            node.content.SetInfo(info);
+
+            switch(info.contentType) 
+            {
+                case "TextNode":
+                    node.CreateContent<TextNode>();
+                    ((TextNode)node.content).text = info.props[0];
+                    ((TextNode)node.content).box.Text = info.props[0];
+                    break;
+
+                case "ColorNode":
+                    node.CreateContent<ColorNode>();
+                    break;
+
+                default:
+                    break;
+            }
+
             return node;
         }
 
@@ -68,7 +85,7 @@ namespace VoidNull
             if (state == ManagerState.normal)
             {
                 selected = n;
-                window.selectedName.Content = "Selected: " + selected.ID.ToString();
+                window.selectedName.Content = "selected: " + selected.content.contentType;
             }
         }
 
@@ -121,7 +138,6 @@ namespace VoidNull
             canvas.Children.Remove(curve);
             end.control.Refresh();
         }
-
 
         public void OnMove(object sender, MouseEventArgs e)
         {

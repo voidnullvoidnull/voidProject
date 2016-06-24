@@ -17,25 +17,6 @@ c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProj
 c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.pdb
 c:\users\рихтер\documents\visual studio 2015\Projects\VoidProject\VoidProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\рихтер\Documents\Visual Studio 2015\Projects\VoidProject\VoidProject\obj\Debug\VoidProject.csprojResolveAssemblyReference.cache
-D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.exe.config
-D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.exe
-D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.pdb
-D:\void\VoidProject\VoidProject\bin\Debug\Newtonsoft.Json.dll
-D:\void\VoidProject\VoidProject\obj\Debug\Simple Styles.baml
-D:\void\VoidProject\VoidProject\obj\Debug\Controls\NodeControl.g.cs
-D:\void\VoidProject\VoidProject\obj\Debug\MainWindow.g.cs
-D:\void\VoidProject\VoidProject\obj\Debug\App.g.cs
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.cache
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.lref
-D:\void\VoidProject\VoidProject\obj\Debug\App.baml
-D:\void\VoidProject\VoidProject\obj\Debug\Controls\NodeControl.baml
-D:\void\VoidProject\VoidProject\obj\Debug\MainWindow.baml
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.g.resources
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.Properties.Resources.resources
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.csproj.GenerateResource.Cache
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.exe
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.pdb
-D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.csprojResolveAssemblyReference.cache
 C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.csprojResolveAssemblyReference.cache
 C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\Simple Styles.baml
 C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\Controls\NodeControl.g.cs
@@ -54,3 +35,22 @@ C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.Propert
 C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.csproj.GenerateResource.Cache
 C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.exe
 C:\Users\void\Source\Repos\voidProject\VoidProject\obj\Debug\VoidProject.pdb
+D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.exe.config
+D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.exe
+D:\void\VoidProject\VoidProject\bin\Debug\VoidProject.pdb
+D:\void\VoidProject\VoidProject\bin\Debug\Newtonsoft.Json.dll
+D:\void\VoidProject\VoidProject\bin\Debug\Newtonsoft.Json.xml
+D:\void\VoidProject\VoidProject\obj\Debug\Simple Styles.baml
+D:\void\VoidProject\VoidProject\obj\Debug\Controls\NodeControl.g.cs
+D:\void\VoidProject\VoidProject\obj\Debug\MainWindow.g.cs
+D:\void\VoidProject\VoidProject\obj\Debug\App.g.cs
+D:\void\VoidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.cache
+D:\void\VoidProject\VoidProject\obj\Debug\VoidProject_MarkupCompile.lref
+D:\void\VoidProject\VoidProject\obj\Debug\App.baml
+D:\void\VoidProject\VoidProject\obj\Debug\Controls\NodeControl.baml
+D:\void\VoidProject\VoidProject\obj\Debug\MainWindow.baml
+D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.g.resources
+D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.Properties.Resources.resources
+D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.csproj.GenerateResource.Cache
+D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.exe
+D:\void\VoidProject\VoidProject\obj\Debug\VoidProject.pdb

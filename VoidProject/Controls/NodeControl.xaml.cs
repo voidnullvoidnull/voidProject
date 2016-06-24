@@ -59,7 +59,7 @@ namespace VoidNull.Controls
 
         public void Refresh()
         {
-            foreach (NodeLink link in node.parentManager.links)
+            foreach (NodeLink link in node.manager.links)
             {
                 if (link.connected.Contains(node))
                 {
@@ -68,14 +68,14 @@ namespace VoidNull.Controls
                     Canvas.SetTop(link.deleteControl, ((link.connected[0].control.outPoint.Y + link.connected[1].control.inPoint.Y) / 2) - 10);
                 }
             }
-            node.parentManager.canvas.Refresh();
+            node.manager.canvas.Refresh();
         }
 
         void Select(object sender, MouseButtonEventArgs e)
         {
-            if (node.parentManager.state == ManagerState.normal)
+            if (node.manager.state == ManagerState.normal)
             {
-                node.parentManager.Select(node);
+                node.manager.Select(node);
 
                 Mouse.Capture(this);
                 offsetX = e.GetPosition(this).X;
@@ -94,24 +94,24 @@ namespace VoidNull.Controls
         {
             if (isDragging)
             {
-                position = new Point(e.GetPosition(node.parentCanvas).X - offsetX, e.GetPosition(node.parentCanvas).Y - offsetY);
+                position = new Point(e.GetPosition(node.canvas).X - offsetX, e.GetPosition(node.canvas).Y - offsetY);
                 Refresh();                
             }
         }
 
         void delete_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            node.parentManager.DeleteNode(node);
+            node.manager.DeleteNode(node);
         }
 
         void output_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            node.parentManager.StartConnection(node);
+            node.manager.StartConnection(node);
         }
 
         void input_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            node.parentManager.EndConnection(node);
+            node.manager.EndConnection(node);
         }
 
         void control_Loaded(object sender, RoutedEventArgs e)

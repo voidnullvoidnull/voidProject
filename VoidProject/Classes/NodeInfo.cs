@@ -13,7 +13,6 @@ namespace VoidNull {
         public string contentType;
         public double posX;
         public double posY;
-        public string text;
         public string[] props;
     }
 }

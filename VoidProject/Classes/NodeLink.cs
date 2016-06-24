@@ -25,8 +25,8 @@ namespace VoidNull
         {
             connected[0] = from;
             connected[1] = to;
-            parentManager = manager;
-            parentCanvas = canvas;
+            base.manager = manager;
+            base.canvas = canvas;
 
             controlCurve = new Path();
             controlCurve.Stroke = Brushes.AliceBlue;
@@ -51,9 +51,9 @@ namespace VoidNull
 
         public void Delete()
         {
-            parentCanvas.Children.Remove(controlCurve);
-            parentCanvas.Children.Remove(deleteControl);
-            parentManager.links.Remove(this);
+            canvas.Children.Remove(controlCurve);
+            canvas.Children.Remove(deleteControl);
+            manager.links.Remove(this);
         }
 
         public KeyValuePair<int,int> GetLink()

@@ -16,7 +16,7 @@ namespace VoidNull
 {
     public abstract class NodeBase
     {
-        public Canvas parentCanvas;
-        public NodeManager parentManager;
+        public Canvas canvas;
+        public NodeManager manager;
     }
 }

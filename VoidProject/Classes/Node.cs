@@ -20,16 +20,23 @@ namespace VoidNull
 
         public Point position;
 
-        public Node(Canvas canvas, NodeManager manager, int id)
+        public Node (Canvas canvas, NodeManager manager, int id)
         {
             ID = id;
-            parentCanvas = canvas;
-            parentManager = manager;
-            content = new NodeContent(this, manager);
-
+            base.canvas = canvas;
+            base.manager = manager;
+            
             control = new NodeControl();
             control.node = this;
-            parentCanvas.Children.Add(control);
+            base.canvas.Children.Add(control);
+        }
+
+        public void CreateContent<T>() where T : NodeContent, new()
+        {
+            content = new T(); 
+            content.manager = manager;
+            content.node = this;
+            control.content.Content = content;
         }
     }
 }

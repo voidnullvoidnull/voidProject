@@ -70,6 +70,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\ContentTypes\ColorNode.cs" />
+    <Compile Include="Classes\ContentTypes\TextNode.cs" />
     <Compile Include="Classes\NodeEditorEventHelper.cs" />
     <Compile Include="Controls\NodeControl.xaml.cs">
       <DependentUpon>NodeControl.xaml</DependentUpon>

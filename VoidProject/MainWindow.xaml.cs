@@ -16,28 +16,25 @@ namespace VoidNull
 {
     public partial class MainWindow : Window
     {
-        public NodeManager manager = new NodeManager();
-        public NodeModelInfo info = new NodeModelInfo();
+        public NodeManager manager;
+        public NodeModelInfo info;
 
         public MainWindow()
         {
             InitializeComponent();
-            manager.canvas = canvas;
-            manager.window = this;
-            manager.curve.Stroke = Brushes.AliceBlue;
-            manager.curve.StrokeThickness = 2;
-            manager.curve.IsHitTestVisible = false;
-
-            NodeEventHelper.activeManager = manager;
-            canvas.MouseMove += NodeEventHelper.OnEditorMove;
-            canvas.MouseDown += NodeEventHelper.OnEditorDown;
-            canvas.MouseUp += NodeEventHelper.OnEditorUp;
-            
+            Clear();
         }
 
         private void addBut_Click(object sender, RoutedEventArgs e)
         {
-            manager.AddNode();
+            Node node = manager.AddNode();
+            node.CreateContent<ColorNode>();
+        }
+
+        private void addTextBut_Click(object sender, RoutedEventArgs e)
+        {
+            Node node = manager.AddNode();
+            node.CreateContent<TextNode>();
         }
 
         private void saveBut_Click(object sender, RoutedEventArgs e)
@@ -82,7 +79,7 @@ namespace VoidNull
             }
             foreach (Node node in manager.nodes.Values)
             {
-                info.AddNodeInfo(node.content.Getinfo());
+                info.WriteNodeInfo(node.content.Getinfo());
             }
 
             using (TextWriter tw = File.CreateText("data.json"))
@@ -119,6 +116,5 @@ namespace VoidNull
                 node.control.Refresh();
             }
         }
-
     }
 }
