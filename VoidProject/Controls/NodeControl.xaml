@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:VoidProject"
-             xmlns:local1="clr-namespace:VoidProject.Controls" x:Name="control" x:Class="VoidProject.Controls.NodeControl"
+             xmlns:local="clr-namespace:VoidNull"
+             xmlns:local1="clr-namespace:VoidNull.Controls" x:Name="control" x:Class="VoidNull.Controls.NodeControl"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Width="300" Height="200" Background="{DynamicResource TransperentControl}" Foreground="{x:Null}" BorderThickness="1" UseLayoutRounding="True" MouseLeftButtonDown="Select" MouseLeftButtonUp="Leave" MouseMove="Move" Loaded="control_Loaded">
     <UserControl.Resources>

@@ -12,12 +12,12 @@ using System.Windows.Media;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace VoidProject
+namespace VoidNull
 {
     public partial class MainWindow : Window
     {
         public NodeManager manager = new NodeManager();
-        public ModelInfo info = new ModelInfo();
+        public NodeModelInfo info = new NodeModelInfo();
 
         public MainWindow()
         {
@@ -28,42 +28,12 @@ namespace VoidProject
             manager.curve.StrokeThickness = 2;
             manager.curve.IsHitTestVisible = false;
 
-            canvas.MouseMove += manager.OnMouseMove;
-            canvas.MouseDown += manager.OnMouseDown;
-            canvas.MouseUp += manager.OnMouseUp;
-
-            CommandBinding newNodeBinding = new CommandBinding(ApplicationCommands.New);
-            CommandBinding saveBinding = new CommandBinding(ApplicationCommands.Save);
-            CommandBinding clearbinding = new CommandBinding(ApplicationCommands.Delete);
-
-            saveBinding.Executed += SaveBinding_Executed;
-            saveBinding.CanExecute += SaveBinding_CanExecute;
-            newNodeBinding.Executed += NewNodeBinding_Executed;
-            clearbinding.Executed += Clearbinding_Executed;
+            NodeEventHelper.activeManager = manager;
+            canvas.MouseMove += NodeEventHelper.OnEditorMove;
+            canvas.MouseDown += NodeEventHelper.OnEditorDown;
+            canvas.MouseUp += NodeEventHelper.OnEditorUp;
             
         }
-
-        private void SaveBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
-                e.CanExecute = true;
-        }
-
-        private void Clearbinding_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            e.Handled = true;
-            Clear();
-        }
-
-        private void SaveBinding_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            Save();
-        }
-
-        private void NewNodeBinding_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            manager.AddNode();
-        }
-
 
         private void addBut_Click(object sender, RoutedEventArgs e)
         {
@@ -89,9 +59,11 @@ namespace VoidProject
             manager.curve.StrokeThickness = 2;
             manager.curve.IsHitTestVisible = false;
 
-            canvas.MouseMove += manager.OnMouseMove;
-            canvas.MouseDown += manager.OnMouseDown;
-            canvas.MouseUp += manager.OnMouseUp;
+            NodeEventHelper.activeManager = manager;
+            canvas.MouseMove += NodeEventHelper.OnEditorMove;
+            canvas.MouseDown += NodeEventHelper.OnEditorDown;
+            canvas.MouseUp += NodeEventHelper.OnEditorUp;
+
 
             canvas.Children.Clear();
             canvas.Refresh();
@@ -99,7 +71,7 @@ namespace VoidProject
 
         void Save()
         {
-            info = new ModelInfo();
+            info = new NodeModelInfo();
             info.count = manager.count;
             info.links = new List<KeyValuePair<int, int>>();
             info.nodes = new Dictionary<int, NodeInfo>();
@@ -117,7 +89,7 @@ namespace VoidProject
             {
                 JsonSerializer js = new JsonSerializer();
                 js.Formatting = Formatting.Indented;
-                js.Serialize(tw, info, typeof(ModelInfo));
+                js.Serialize(tw, info, typeof(NodeModelInfo));
             }
         }
 
@@ -129,7 +101,7 @@ namespace VoidProject
             using (TextReader tr = File.OpenText("data.json"))
             {
                 JsonSerializer js = new JsonSerializer();
-                info = (ModelInfo)js.Deserialize(tr, typeof(ModelInfo));
+                info = (NodeModelInfo)js.Deserialize(tr, typeof(NodeModelInfo));
                 manager.count = info.count+1;
             }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoidProject { 
+namespace VoidNull { 
 
     [Serializable]
     public struct NodeInfo

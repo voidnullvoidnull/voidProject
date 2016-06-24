@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoidProject
+namespace VoidNull
 {
     [Serializable]
-    public struct ModelInfo
+    public struct NodeModelInfo
     {
         public int count;
         public List<KeyValuePair<int, int>> links;
