@@ -1,0 +1,20 @@
+D:\void\VoidProject\VoidProject\bin\Docs\VoidProject.exe.config
+D:\void\VoidProject\VoidProject\bin\Docs\VoidProject.exe
+D:\void\VoidProject\VoidProject\bin\Docs\VoidProject.pdb
+D:\void\VoidProject\VoidProject\bin\Docs\Newtonsoft.Json.dll
+D:\void\VoidProject\VoidProject\bin\Docs\Newtonsoft.Json.xml
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject.csprojResolveAssemblyReference.cache
+D:\void\VoidProject\VoidProject\obj\Docs\Simple Styles.baml
+D:\void\VoidProject\VoidProject\obj\Docs\Controls\NodeControl.g.cs
+D:\void\VoidProject\VoidProject\obj\Docs\MainWindow.g.cs
+D:\void\VoidProject\VoidProject\obj\Docs\App.g.cs
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject_MarkupCompile.cache
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject_MarkupCompile.lref
+D:\void\VoidProject\VoidProject\obj\Docs\App.baml
+D:\void\VoidProject\VoidProject\obj\Docs\Controls\NodeControl.baml
+D:\void\VoidProject\VoidProject\obj\Docs\MainWindow.baml
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject.g.resources
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject.Properties.Resources.resources
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject.csproj.GenerateResource.Cache
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject.exe
+D:\void\VoidProject\VoidProject\obj\Docs\VoidProject.pdb

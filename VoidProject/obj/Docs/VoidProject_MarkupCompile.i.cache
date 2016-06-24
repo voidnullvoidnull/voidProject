@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-D:\void\VoidProject\VoidProject\obj\Release\
+D:\void\VoidProject\VoidProject\obj\Docs\
 VoidProject
 none
 false
-TRACE
+TRACE;DEBUG;\doc
 D:\void\VoidProject\VoidProject\App.xaml
 3-939352247
 
-16876942176
+201158664191
 141403660553
 Controls\NodeControl.xaml;MainWindow.xaml;Simple Styles.xaml;
 

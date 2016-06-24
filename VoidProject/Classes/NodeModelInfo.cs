@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace VoidNull
 {
+
+/// <summary>
+/// Представляет из себя структуру данных, проецирующую на себя информацию из NodeManager, для последующего их сохранения на диск.
+/// Содержит методы добавления информации по элеметам и ссылкам в формате, удобном для сохранения.
+/// </summary>
+
     [Serializable]
     public struct NodeModelInfo
     {

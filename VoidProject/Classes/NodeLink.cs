@@ -13,6 +13,11 @@ using VoidNull.Controls;
 
 namespace VoidNull
 {
+
+/// <summary>
+/// Класс реализующий и хранящий в себе данные о соединенных нодах. 
+/// Также, хранит ссылку на визуальное представление соединения в виде кривой Безье, которая помещается в Canvas рабочего поля.
+/// </summary>
     public class NodeLink: NodeBase
     {
         public Node[] connected = new Node[2];

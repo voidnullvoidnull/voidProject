@@ -13,6 +13,13 @@ using System.Windows.Threading;
 
 namespace VoidNull
 {
+
+/// <summary>
+/// Статический класс-помощник по обработке событий, приходящих с рабочего поля Canvas, а также для связи этих событий с методами,
+/// реализующими функционал NodeManager. Также реализует функцию по отрисовке соединительных кривых Безье, а точнее, предоставляет объект геометрии,
+/// который будет использоват вызывающим методом на своё усмотрение.
+/// </summary>
+
     public static class NodeEventHelper
     {
         public static NodeManager activeManager;

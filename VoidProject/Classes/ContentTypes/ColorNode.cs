@@ -19,7 +19,8 @@ namespace VoidNull
         {
             contentType = "ColorNode";
             but = new Button();
-            
+            but.Height = 100;
+            but.Background = Brushes.Azure;
             panel.Children.Add(but);
         }
 

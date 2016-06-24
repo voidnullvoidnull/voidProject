@@ -14,6 +14,12 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 namespace VoidNull
 {
+    /// <summary>
+    /// Базовый абстрактный класс для элементов, которые могут взаимодействовать в рамках методов NodeManager. 
+    /// Реализует хранение ссылок на текущий Canvas отображения и NodeManager, 
+    /// в котором производятся операции над объектом, реализующий данный класс
+    /// </summary>
+    
     public abstract class NodeBase
     {
         public Canvas canvas;
